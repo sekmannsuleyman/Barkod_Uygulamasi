@@ -14,7 +14,7 @@ class AdaNoKaydetSorgu {
 
     final parametre = "$paletNo,$adaNo,$sicilNo,$siraNo";
     final String envelope = '''
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://web.ias.com">
+<soapenv:Envelope xmlns:soapenv="h" xmlns:web="">
   <soapenv:Header/>
   <soapenv:Body>
     <web:callIASService>
