@@ -84,7 +84,7 @@ class AmbarSayimSorguSorgu {
 
   Future<String> _getSessionId() async {
     final envelope = '''
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://web.ias.com">
+<soapenv:Envelope xmlns:soapenv="ht/" xmlns:web="hm">
   <soapenv:Header/>
   <soapenv:Body>
     <web:login>
@@ -105,7 +105,7 @@ class AmbarSayimSorguSorgu {
         endpoint,
         options: Options(headers: {
           'Content-Type': 'text/xml; charset=utf-8',
-          'SOAPAction': 'http://web.ias.com/login',
+          'SOAPAction': '',
         }),
         data: envelope,
       );
