@@ -6,7 +6,7 @@ class SarfaCikisSorgu {
     connectTimeout: Duration(seconds: 10),
     receiveTimeout: Duration(seconds: 10),
   ));
-  final String endpoint = 'http://195.175.82.182:8080/CaniasWS-v1/services/iasWebService';
+  final String endpoint = '';
   String? _sessionId;
 
   Future<Map<String, dynamic>> kaydetSarfaCikisCubit(
@@ -29,11 +29,11 @@ class SarfaCikisSorgu {
   <soapenv:Header/>
   <soapenv:Body>
     <web:callIASService>
-      <sessionid>$_sessionId</sessionid>
-      <serviceid>SARF</serviceid>
-      <args>$parametre</args>
-      <returntype>STRING</returntype>
-      <permanent>true</permanent>
+      <sessionid>$</sessionid>
+      <serviceid></serviceid>
+      <args>$</args>
+      <returntype></returntype>
+      <permanent></permanent>
     </web:callIASService>
   </soapenv:Body>
 </soapenv:Envelope>
@@ -109,17 +109,17 @@ class SarfaCikisSorgu {
   Future<String> _getSessionId() async {
     final String envelope = '''
 <?xml version="1.0" encoding="utf-8"?>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://web.ias.com">
+<soapenv:Envelope xmlns:soapenv="http://..org///" xmlns:web="://.com">
   <soapenv:Header/>
   <soapenv:Body>
     <web:login>
-      <p_strClient>00</p_strClient>
-      <p_strLanguage>T</p_strLanguage>
-      <p_strDBName>BIEN802</p_strDBName>
-      <p_strDBServer>CANIAS</p_strDBServer>
-      <p_strAppServer>195.175.82.182:27499</p_strAppServer>
-      <p_strUserName>BIENURETIM</p_strUserName>
-      <p_strPassword>kp2010</p_strPassword>
+      <p_strClient></p_strClient>
+      <p_strLanguage></p_strLanguage>
+      <p_strDBName></p_strDBName>
+      <p_strDBServer></p_strDBServer>
+      <p_strAppServer>19</p_strAppServer>
+      <p_strUserName></p_strUserName>
+      <p_strPassword></p_strPassword>
     </web:login>
   </soapenv:Body>
 </soapenv:Envelope>
