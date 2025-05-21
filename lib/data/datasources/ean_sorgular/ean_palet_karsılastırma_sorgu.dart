@@ -41,9 +41,9 @@ class EanPaletKarsilastirmaSorgu{
     final argsXml = paletId;
 
     final requestXml = '''
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Envelope xmlns:soapenv="">
   <soapenv:Body>
-    <callIASService xmlns="http://195.175.82.182:8080/CaniasWS-v1/services/iasWebService">
+    <callIASService xmlns="">
       <sessionid>dummy-session</sessionid>
       <serviceid>$serviceId</serviceid>
       <args><![CDATA[$argsXml]]></args>
@@ -55,7 +55,7 @@ class EanPaletKarsilastirmaSorgu{
 ''';
 
     final response = await dio.post(
-      'http://195.175.82.182:8080/CaniasWS-v1/services/iasWebService',
+      '',
       data: requestXml,
       options: Options(headers: {
         'Content-Type': 'text/xml; charset=utf-8',
