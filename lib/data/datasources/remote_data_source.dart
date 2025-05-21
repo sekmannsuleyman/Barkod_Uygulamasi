@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class RemoteDataSource {
   final Dio _dio = Dio(BaseOptions(
-    baseUrl: 'http://195.175.82.182/terminal/login.aspx',
+    baseUrl: 'h',
     connectTimeout: Duration(seconds: 10),
     receiveTimeout: Duration(seconds: 10),
   ));
@@ -43,16 +43,16 @@ class RemoteDataSource {
       // POST isteği için veri
       var formData = FormData.fromMap({
         'txtAd': formattedKullaniciAdi,
-        'txtSifre': sifre,
-        'btnGiris': 'Giriş',
-        '__VIEWSTATE': viewState,
-        '__EVENTVALIDATION': eventValidation,
-        '__EVENTTARGET': '',
-        '__EVENTARGUMENT': '',
+        '': sifre,
+        '': 'Giriş',
+        '': viewState,
+        '': eventValidation,
+        '': '',
+        '': '',
       });
 
       // POST isteği gönder
-      print('POST isteği gönderiliyor: /login.aspx');
+      print('POST ist');
       final postResponse = await _dio.post(
         '/login.aspx',
         data: formData,
