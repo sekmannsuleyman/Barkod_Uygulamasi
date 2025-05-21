@@ -3,20 +3,20 @@ import 'package:dio/dio.dart';
 class UretimKismiIptalSorgu {
 
   final Dio _dio = Dio();
-  final String _baseUrl = "http://195.175.82.182:8080/CaniasWS-v1/services/iasWebService";
+  final String _baseUrl = "h";
 
   Future<String?> kaydetUretimKismiIptalCubit(String belgeNo, String paletBarkodNo) async {
     try {
       final loginEnvelope = '''<?xml version="1.0" encoding="utf-8"?>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://web.ias.com">
+<soapenv:Envelope xmlns:soapenv="http/" xmlns:web="hm">
   <soapenv:Header/>
   <soapenv:Body>
     <web:login>
-      <p_strClient>999</p_strClient>
-      <p_strLanguage>TR</p_strLanguage>
-      <p_strDBName>BIEN</p_strDBName>
-      <p_strDBServer>195.175.82.182</p_strDBServer>
-      <p_strAppServer>195.175.82.182</p_strAppServer>
+      <p_strClient></p_strClient>
+      <p_strLanguage></p_strLanguage>
+      <p_strDBName></p_strDBName>
+      <p_strDBServer>254</p_strDBServer>
+      <p_strAppServer>1</p_strAppServer>
       <p_strUserName>mobil</p_strUserName>
       <p_strPassword>mobil</p_strPassword>
     </web:login>
@@ -35,15 +35,15 @@ class UretimKismiIptalSorgu {
       final sessionId = loginBody.substring(sessionStart, sessionEnd);
 
       final callEnvelope = '''<?xml version="1.0" encoding="utf-8"?>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://web.ias.com">
+<soapenv:Envelope xmlns:soapenv="htt/" xmlns:web="h">
   <soapenv:Header/>
   <soapenv:Body>
     <web:callIASService>
-      <sessionid>$sessionId</sessionid>
-      <serviceid>URETIM</serviceid>
-      <args>2,$belgeNo$paletBarkodNo</args>
+      <sessionid>$</sessionid>
+      <serviceid></serviceid>
+      <args>2,$</args>
       <returntype></returntype>
-      <permanent>false</permanent>
+      <permanent></permanent>
     </web:callIASService>
   </soapenv:Body>
 </soapenv:Envelope>''';
