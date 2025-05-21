@@ -6,7 +6,7 @@ class AmbarSayimSorguSorgu {
     connectTimeout: Duration(seconds: 10),
     receiveTimeout: Duration(seconds: 10),
   ));
-  final String endpoint = 'http://195.175.82.182:8080/CaniasWS-v1/services/iasWebService';
+  final String endpoint = '';
   String? _sessionId;
 
   Future<List<Map<String, String>>> kaydetAmbarSayimSorgu(String rafNo, String gozNo, String barkodNo) async {
