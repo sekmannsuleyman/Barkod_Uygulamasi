@@ -35,7 +35,7 @@ class AmbarGerialSorgu {
         endpoint,
         options: Options(headers: {
           'Content-Type': 'text/xml; charset=utf-8',
-          'SOAPAction': 'http://web.ias.com/callIASService',
+          'SOAPAction': '',
         }),
         data: envelope,
       );
@@ -87,7 +87,7 @@ class AmbarGerialSorgu {
 
   Future<String> _getSessionId() async {
     final envelope = '''
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://web.ias.com">
+<soapenv:Envelope xmlns:soapenv="ht" xmlns:web="h">
   <soapenv:Header/>
   <soapenv:Body>
     <web:login>
