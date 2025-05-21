@@ -6,22 +6,22 @@ class UretimGirisSorgu {
     connectTimeout: Duration(seconds: 10),
     receiveTimeout: Duration(seconds: 10),
   ));
-  final String _baseUrl = "http://195.175.82.182:8080/CaniasWS-v1/services/iasWebService";
+  final String _baseUrl = "htt";
 
   Future<String?> login() async {
     try {
       final envelope = '''<?xml version="1.0" encoding="utf-8"?>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://web.ias.com">
+<soapenv:Envelope xmlns:soapenv="http/" xmlns:web="htm">
   <soapenv:Header/>
   <soapenv:Body>
     <web:login>
-      <p_strClient>00</p_strClient>
-      <p_strLanguage>T</p_strLanguage>
-      <p_strDBName>BIEN802</p_strDBName>
-      <p_strDBServer>CANIAS</p_strDBServer>
-      <p_strAppServer>195.175.82.182:27499</p_strAppServer>
-      <p_strUserName>BIENURETIM</p_strUserName>
-      <p_strPassword>kp2010</p_strPassword>
+      <p_strClient></p_strClient>
+      <p_strLanguage></p_strLanguage>
+      <p_strDBName></p_strDBName>
+      <p_strDBServer></p_strDBServer>
+      <p_strAppServer>.:</p_strAppServer>
+      <p_strUserName></p_strUserName>
+      <p_strPassword></p_strPassword>
     </web:login>
   </soapenv:Body>
 </soapenv:Envelope>'''.trim();
@@ -63,15 +63,15 @@ class UretimGirisSorgu {
   Future<String?> callIASService(String sessionId, String emirNo, String barkodNo) async {
     try {
       final envelope = '''<?xml version="1.0" encoding="utf-8"?>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://web.ias.com">
+<soapenv:Envelope xmlns:soapenv="http//" xmlns:web="ht">
   <soapenv:Header/>
   <soapenv:Body>
     <web:callIASService>
-      <sessionid>$sessionId</sessionid>
-      <serviceid>URETIM</serviceid>
-      <args>0,$emirNo,$barkodNo</args>
-      <returntype>STRING</returntype>
-      <permanent>true</permanent>
+      <sessionid>$</sessionid>
+      <serviceid></serviceid>
+      <args>0,$</args>
+      <returntype></returntype>
+      <permanent></permanent>
     </web:callIASService>
   </soapenv:Body>
 </soapenv:Envelope>'''.trim();
