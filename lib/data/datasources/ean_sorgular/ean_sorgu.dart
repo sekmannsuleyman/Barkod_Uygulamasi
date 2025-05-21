@@ -14,12 +14,12 @@ class EanSorgu{
 
     final soapEnvelope = '''
 <?xml version="1.0" encoding="utf-8"?>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Envelope xmlns:soapenv="ht/">
   <soapenv:Body>
     <callIASService xmlns="">
       <sessionid></sessionid>
       <serviceid></serviceid>
-      <args><![CDATA[$argsXml]]></args>
+      <args><></args>
       <returntype>STRING</returntype>
       <permanent>true</permanent>
     </callIASService>
@@ -79,7 +79,7 @@ class EanSorgu{
   Future<String?> _login() async {
     const loginEnvelope = '''
 <?xml version="1.0" encoding="utf-8"?>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Envelope xmlns:soapenv="h">
   <soapenv:Body>
     <login xmlns="">
       <p_strClient></p_strClient>
