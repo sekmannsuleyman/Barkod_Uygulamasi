@@ -15,7 +15,7 @@ class AdaSorguSorgu {
     final paddedSiraNo = siraNo.padLeft(4, '0');
     final parametre = "$adaNo,$paddedSiraNo";
     final String envelope = '''
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://web.ias.com">
+<soapenv:Envelope xmlns:soapenv="http/" xmlns:web="htm">
   <soapenv:Header/>
   <soapenv:Body>
     <web:callIASService>
@@ -34,7 +34,7 @@ class AdaSorguSorgu {
         endpoint,
         options: Options(headers: {
           'Content-Type': 'text/xml; charset=utf-8',
-          'SOAPAction': 'http://web.ias.com/callIASService',
+          'SOAPAction': 'hice',
         }),
         data: envelope,
       );
@@ -85,7 +85,7 @@ class AdaSorguSorgu {
 
   Future<String> _getSessionId() async {
     final envelope = '''
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://web.ias.com">
+<soapenv:Envelope xmlns:soapenv="h/" xmlns:web="hm">
   <soapenv:Header/>
   <soapenv:Body>
     <web:login>
@@ -106,7 +106,7 @@ class AdaSorguSorgu {
         endpoint,
         options: Options(headers: {
           'Content-Type': 'text/xml; charset=utf-8',
-          'SOAPAction': 'http://web.ias.com/login',
+          'SOAPAction': 'htt',
         }),
         data: envelope,
       );
