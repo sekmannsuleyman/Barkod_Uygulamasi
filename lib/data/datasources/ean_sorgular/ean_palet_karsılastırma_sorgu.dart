@@ -37,7 +37,7 @@ class EanPaletKarsilastirmaSorgu{
   }
 
   Future<String?> _eanFromPaletId(String paletId) async {
-    const serviceId = "PALETDENSORGU"; // dummy olarak
+    const serviceId = ""; // dummy olarak
     final argsXml = paletId;
 
     final requestXml = '''
