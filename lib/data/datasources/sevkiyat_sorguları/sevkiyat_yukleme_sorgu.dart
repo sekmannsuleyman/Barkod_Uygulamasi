@@ -6,25 +6,25 @@ class SevkiyatYuklemeSorgu {
     connectTimeout: Duration(seconds: 10),
     receiveTimeout: Duration(seconds: 10),
   ));
-  final String endpoint = 'http://195.175.82.182:8080/CaniasWS-v1/services/iasWebService';
+  final String endpoint = '';
 
   Future<String> _getSessionId() async {
-    const username = "BIENURETIM";
-    const password = "kp2010";
+    const username = "";
+    const password = "";
 
     final loginEnvelope = '''
 <?xml version="1.0" encoding="utf-8"?>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://web.ias.com">
+<soapenv:Envelope xmlns:soapenv="h/" xmlns:web="h">
   <soapenv:Header/>
   <soapenv:Body>
     <web:login>
-      <p_strClient>00</p_strClient>
-      <p_strLanguage>T</p_strLanguage>
-      <p_strDBName>BIEN802</p_strDBName>
-      <p_strDBServer>CANIAS</p_strDBServer>
-      <p_strAppServer>195.175.82.182:27499</p_strAppServer>
-      <p_strUserName>$username</p_strUserName>
-      <p_strPassword>$password</p_strPassword>
+      <p_strClient></p_strClient>
+      <p_strLanguage></p_strLanguage>
+      <p_strDBName></p_strDBName>
+      <p_strDBServer></p_strDBServer>
+      <p_strAppServer>:</p_strAppServer>
+      <p_strUserName></p_strUserName>
+      <p_strPassword>$</p_strPassword>
     </web:login>
   </soapenv:Body>
 </soapenv:Envelope>
@@ -65,15 +65,15 @@ class SevkiyatYuklemeSorgu {
 
     final soapEnvelope = '''
 <?xml version="1.0" encoding="utf-8"?>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://web.ias.com">
+<soapenv:Envelope xmlns:soapenv="he/" xmlns:web="hm">
   <soapenv:Header/>
   <soapenv:Body>
     <web:callIASService>
-      <sessionid>$sessionId</sessionid>
-      <serviceid>$serviceId</serviceid>
-      <args>$emirNo</args>
-      <returntype>STRING</returntype>
-      <permanent>true</permanent>
+      <sessionid>$</sessionid>
+      <serviceid>$</serviceid>
+      <args>$</args>
+      <returntype></returntype>
+      <permanent></permanent>
     </web:callIASService>
   </soapenv:Body>
 </soapenv:Envelope>
