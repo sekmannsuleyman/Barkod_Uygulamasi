@@ -16,9 +16,9 @@ class EanSorgu{
 <?xml version="1.0" encoding="utf-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
   <soapenv:Body>
-    <callIASService xmlns="http://192.168.0.6:8080/CaniasWS-v1/services/iasWebService">
-      <sessionid>$sessionId</sessionid>
-      <serviceid>$serviceId</serviceid>
+    <callIASService xmlns="">
+      <sessionid></sessionid>
+      <serviceid></serviceid>
       <args><![CDATA[$argsXml]]></args>
       <returntype>STRING</returntype>
       <permanent>true</permanent>
@@ -29,7 +29,7 @@ class EanSorgu{
 
     try {
       final response = await dio.post(
-        'http://195.175.82.182:8080/CaniasWS-v1/services/iasWebService',
+        '',
         data: soapEnvelope,
         options: Options(headers: {
           'Content-Type': 'text/xml; charset=utf-8',
@@ -81,21 +81,21 @@ class EanSorgu{
 <?xml version="1.0" encoding="utf-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
   <soapenv:Body>
-    <login xmlns="http://195.175.82.182:8080/CaniasWS-v1/services/iasWebService">
-      <p_strClient>00</p_strClient>
+    <login xmlns="">
+      <p_strClient></p_strClient>
       <p_strLanguage>E</p_strLanguage> <!-- Türkçe yerine İngilizce -->
-      <p_strDBName>BIEN802</p_strDBName>
-      <p_strDBServer>CANIAS</p_strDBServer>
-      <p_strAppServer>195.175.82.182:27499</p_strAppServer>
-      <p_strUserName>BIENURETIM</p_strUserName>
-      <p_strPassword>kp2010</p_strPassword>
+      <p_strDBName></p_strDBName>
+      <p_strDBServer></p_strDBServer>
+      <p_strAppServer></p_strAppServer>
+      <p_strUserName></p_strUserName>
+      <p_strPassword></p_strPassword>
     </login>
   </soapenv:Body>
 </soapenv:Envelope>
 ''';
 
     final response = await dio.post(
-      'http://195.175.82.182:8080/CaniasWS-v1/services/iasWebService',
+      '',
       data: loginEnvelope,
       options: Options(headers: {
         'Content-Type': 'text/xml; charset=utf-8',
@@ -109,9 +109,9 @@ class EanSorgu{
   Future<void> _logout(String sessionId) async {
     final logoutEnvelope = '''
 <?xml version="1.0" encoding="utf-8"?>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Envelope xmlns:soapenv="/">
   <soapenv:Body>
-    <logout xmlns="http://195.175.82.182:8080/CaniasWS-v1/services/iasWebService">
+    <logout xmlns="">
       <p_strSessionId>$sessionId</p_strSessionId>
     </logout>
   </soapenv:Body>
@@ -119,7 +119,7 @@ class EanSorgu{
 ''';
 
     await dio.post(
-      'http://195.175.82.182:8080/CaniasWS-v1/services/iasWebService',
+      '',
       data: logoutEnvelope,
       options: Options(headers: {
         'Content-Type': 'text/xml; charset=utf-8',
