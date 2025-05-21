@@ -6,7 +6,7 @@ class SayimSorguSorgu {
     connectTimeout: Duration(seconds: 10),
     receiveTimeout: Duration(seconds: 10),
   ));
-  final String endpoint = 'http://195.175.82.182:8080/CaniasWS-v1/services/iasWebService';
+  final String endpoint = '';
   String? _sessionId;
 
   Future<List<Map<String, String>>> kaydetSayimSorguCubit(String rafNo, String barkodNo) async {
@@ -14,15 +14,15 @@ class SayimSorguSorgu {
 
     final parametre = "2,$rafNo,$barkodNo";
     final String envelope = '''
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://web.ias.com">
+<soapenv:Envelope xmlns:soapenv="/" xmlns:web="hm">
   <soapenv:Header/>
   <soapenv:Body>
     <web:callIASService>
-      <sessionid>$_sessionId</sessionid>
-      <serviceid>SAYIMSORGU</serviceid>
-      <args>$parametre</args>
-      <returntype>STRING</returntype>
-      <permanent>true</permanent>
+      <sessionid>$</sessionid>
+      <serviceid></serviceid>
+      <args>$</args>
+      <returntype></returntype>
+      <permanent></permanent>
     </web:callIASService>
   </soapenv:Body>
 </soapenv:Envelope>
@@ -33,7 +33,7 @@ class SayimSorguSorgu {
         endpoint,
         options: Options(headers: {
           'Content-Type': 'text/xml; charset=utf-8',
-          'SOAPAction': 'http://web.ias.com/callIASService', // SOAPAction başlığı eklendi
+          'SOAPAction': '', // SOAPAction başlığı eklendi
         }),
         data: envelope,
       );
@@ -87,16 +87,16 @@ class SayimSorguSorgu {
 
   Future<String> _getSessionId() async {
     final envelope = '''
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://web.ias.com">
+<soapenv:Envelope xmlns:soapenv="htpe/" xmlns:web="">
   <soapenv:Header/>
   <soapenv:Body>
     <web:login>
-      <p_strClient>00</p_strClient>
-      <p_strLanguage>T</p_strLanguage>
-      <p_strDBName>BIEN802</p_strDBName>
-      <p_strDBServer>CANIAS</p_strDBServer>
-      <p_strAppServer>195.175.82.182:27499</p_strAppServer>
-      <p_strUserName>BIENURETIM</p_strUserName>
+      <p_strClient></p_strClient>
+      <p_strLanguage></p_strLanguage>
+      <p_strDBName></p_strDBName>
+      <p_strDBServer></p_strDBServer>
+      <p_strAppServer>19</p_strAppServer>
+      <p_strUserName></p_strUserName>
       <p_strPassword>kp2010</p_strPassword>
     </web:login>
   </soapenv:Body>
@@ -108,7 +108,7 @@ class SayimSorguSorgu {
         endpoint,
         options: Options(headers: {
           'Content-Type': 'text/xml; charset=utf-8',
-          'SOAPAction': 'http://web.ias.com/login', // SOAPAction başlığı eklendi
+          'SOAPAction': 'hn', // SOAPAction başlığı eklendi
         }),
         data: envelope,
       );
